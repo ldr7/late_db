@@ -38,6 +38,10 @@ thin Python benchmark/package layer.
 - The user uses PR and MR interchangeably; both mean a GitHub pull request.
 - Track substantive work in issues with observable acceptance criteria. Link
   each pull request to its issue and use the matching issue and PR templates.
+- Use the six canonical raw issue bodies under `docs/templates/issues/` and
+  PR bodies under `.github/PULL_REQUEST_TEMPLATE/`; see
+  `docs/templates/README.md`. Draft complete first passes from repository
+  evidence without asking the user to fill the template.
 - PR descriptions must explain the problem, resulting behavior, validation,
   and material limitations. Review changes and check CI before merging.
 - Publishing is authorized for the initial version in `ldr7/late_db`. Open an
