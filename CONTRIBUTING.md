@@ -5,9 +5,17 @@ verify, or maintain. Start with a concrete problem and an observable outcome.
 
 ## Issues and Branches
 
-Use the bug report, feature/demo enhancement, or benchmark/experiment issue
-template to capture the problem, acceptance criteria, and available evidence.
-Record the issue number before starting an implementation.
+Use the matching feature, bug, benchmark, refactor, documentation, or maintenance
+issue template to capture the problem, acceptance criteria, and available
+evidence. Record the issue number before starting an implementation.
+
+For issues created through an API or CLI, use the canonical raw Markdown bodies
+in `docs/templates/issues/`: `feature.md`, `bug.md`, `benchmark.md`,
+`refactor.md`, `docs.md`, or `maintenance.md`.
+The YAML forms in `.github/ISSUE_TEMPLATE/` provide the equivalent GitHub UI.
+Agents write the first complete draft from repository evidence, including
+specific acceptance criteria, rather than asking the user to fill a template.
+See [the template guide](docs/templates/README.md) for issue and PR mappings.
 
 Treat `main` as protected: work on a feature branch and submit a pull request
 against `main`. A merge request (MR) means the same thing as a pull request (PR)
@@ -75,14 +83,20 @@ query parameter to the GitHub compare/new-PR URL:
 | --- | --- |
 | Feature or demo enhancement | `?template=feature.md` |
 | Bug fix | `?template=fix.md` |
-| Documentation or maintenance | `?template=docs.md` |
+| Benchmark or experiment | `?template=benchmark.md` |
+| Refactor | `?template=refactor.md` |
+| Documentation | `?template=docs.md` |
+| Maintenance | `?template=maintenance.md` |
 
 If the URL already has a query string, append `&template=feature.md` instead.
 For example, start from
 `https://github.com/ldr7/late_db/compare/main...YOUR_BRANCH?expand=1&template=feature.md`.
 Replace `YOUR_BRANCH` with the actual branch name. The Markdown templates live
-in `.github/PULL_REQUEST_TEMPLATE/` and can also be used as the body of a CLI
-created PR.
+in `.github/PULL_REQUEST_TEMPLATE/` and are also the canonical bodies for
+API-created and CLI-created PRs. The fallback is
+`.github/pull_request_template.md`. Copy the selected template to a temporary
+body file, replace its prompts with the concrete change and evidence, then use
+that file when creating the PR.
 
 Write the description for a reviewer who has not seen the working conversation.
 Lead with what changes for a caller or demo user, then provide validation and

@@ -1,7 +1,7 @@
-## Problem and result
+## Reader problem and documentation change
 
-Describe what was unclear or difficult to maintain and how this change improves
-the documentation or development workflow.
+Identify the reader task and what was unclear or incorrect. Describe the updated
+guidance and the implementation or evidence that supports it.
 
 ## Related issue
 
@@ -9,8 +9,8 @@ Closes #ISSUE or Refs #ISSUE.
 
 ## Validation
 
-Record relevant command, example, link, or configuration checks and their
-results. Explain checks not run and why.
+Record relevant command, example, and link checks and their results. Explain any
+examples or platforms that were not verified.
 
 ## Limitations
 
