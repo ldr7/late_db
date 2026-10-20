@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "late_db universal retrieval manifest record",
+  "type": "object",
+  "required": [
+    "image_id",
+    "slice",
+    "source",
+    "license",
+    "local_path",
+    "source_url",
+    "queries"
+  ],
+  "properties": {
+    "image_id": { "type": "string" },
+    "slice": { "type": "string" },
+    "source": { "type": "string" },
+    "license": { "type": "string" },
+    "local_path": { "type": "string" },
+    "source_url": { "type": "string" },
+    "notes": { "type": "string" },
+    "queries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "query_id",
+          "kind",
+          "text",
+          "positive_image_ids",
+          "hard_negative_image_ids",
+          "tags"
+        ],
+        "properties": {
+          "query_id": { "type": "string" },
+          "kind": {
+            "type": "string",
+            "enum": ["direct", "fine_grained", "hard_negative"]
+          },
+          "text": { "type": "string" },
+          "positive_image_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "hard_negative_image_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

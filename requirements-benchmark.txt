@@ -1,0 +1,7 @@
+pillow
+torch
+torchvision
+transformers
+accelerate
+datasets
+colpali-engine

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["maturin>=1.10,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "late-db"
+version = "0.1.0"
+description = "In-memory multimodal late-interaction scoring engine"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Rust",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+]
+
+[project.scripts]
+late-db-demo = "late_db.demo:main"
+
+[tool.maturin]
+python-source = "python"
+module-name = "late_db._native"
+bindings = "pyo3"
+features = ["python"]

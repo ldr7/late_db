@@ -1,0 +1,39 @@
+name: Benchmark or experiment
+description: Define a reproducible measurement and the decision it should inform.
+title: "[Benchmark] "
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question and decision
+      description: What are we measuring, and what decision will the result inform?
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: Reproducible setup
+      description: Identify the repository corpus, queries, model or cache, baseline, device, and command. Do not include environment-variable values or credentials.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance and validation
+      description: Define metrics, comparable workloads, correctness checks, and the evidence needed to answer the question.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Results and artifact references
+      description: Add measured quality and timing with runtime versions. Keep generated artifacts under the ignored data/universal_retrieval/runs directory; summarize publishable evidence here.
+    validations:
+      required: false
+  - type: textarea
+    id: limits
+    attributes:
+      label: Limitations
+      description: State sample limits, incomplete comparisons, and whether evidence uses synthetic vectors or real model embeddings.
+    validations:
+      required: false
