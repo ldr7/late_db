@@ -1,0 +1,104 @@
+{
+  "name": "universal_image_retrieval_seed",
+  "target_images": 64,
+  "slices": [
+    {
+      "slice": "forms_ocr_docs",
+      "target": 8,
+      "sources": ["FUNSD"],
+      "query_templates": [
+        "find the form with {field_name}",
+        "find the scanned document with a noisy {field_type}",
+        "find the form where {small_text} appears near {layout_region}"
+      ],
+      "tags": ["layout_sensitive", "tiny_text", "ocr", "key_value_layout"]
+    },
+    {
+      "slice": "enterprise_docs",
+      "target": 6,
+      "sources": ["ViDoRe V3"],
+      "query_templates": [
+        "find the document page that mentions {entity_or_field}",
+        "find the page with a table about {topic}",
+        "find the page containing evidence for {business_question}"
+      ],
+      "tags": ["layout_sensitive", "tiny_text", "visual_document"]
+    },
+    {
+      "slice": "charts_tables",
+      "target": 8,
+      "sources": ["ChartQA", "ViDoRe chart pages"],
+      "query_templates": [
+        "find the chart where {series} is highest in {period}",
+        "find the table comparing {metric} across {group}",
+        "find the plot with a {trend_type} trend"
+      ],
+      "tags": ["chart", "numeric_labels", "legend_binding"]
+    },
+    {
+      "slice": "diagrams",
+      "target": 8,
+      "sources": ["AI2D", "patent figures"],
+      "query_templates": [
+        "find the diagram showing {component} connected to {component}",
+        "find the figure with arrows from {source} to {target}",
+        "find the labeled technical drawing of {object}"
+      ],
+      "tags": ["symbolic_structure", "arrows", "line_art"]
+    },
+    {
+      "slice": "floorplans_civil",
+      "target": 6,
+      "sources": ["CubiCasa5K"],
+      "query_templates": [
+        "find the floorplan with {room} next to {room}",
+        "find the plan showing stairs near {feature}",
+        "find the drawing with multiple bedrooms and a shared bathroom"
+      ],
+      "tags": ["spatial_relationships", "civil_diagram", "symbolic_structure"]
+    },
+    {
+      "slice": "ui_screens",
+      "target": 8,
+      "sources": ["RICO", "public app screenshots"],
+      "query_templates": [
+        "find the screen with a {control_type} for {setting}",
+        "find the checkout screen with {field_name}",
+        "find the error screen mentioning {error_text}"
+      ],
+      "tags": ["ui", "icons", "short_text"]
+    },
+    {
+      "slice": "natural_images",
+      "target": 8,
+      "sources": ["COCO 2017 val"],
+      "query_templates": [
+        "find the image with {object} near {object}",
+        "find the image matching {attribute_binding}"
+      ],
+      "tags": ["attribute_binding", "natural_image", "object_relationships"]
+    },
+    {
+      "slice": "product_catalog",
+      "target": 8,
+      "sources": ["Amazon Berkeley Objects"],
+      "query_templates": [
+        "find the product that is {color} with {material_or_part}",
+        "find the catalog image showing {object_type} with {attribute}",
+        "find the item most similar to {product_description}"
+      ],
+      "tags": ["attribute_binding", "product", "fine_grained_visual"]
+    },
+    {
+      "slice": "remote_sensing",
+      "target": 4,
+      "sources": ["EuroSAT RGB"],
+      "query_templates": [
+        "find the aerial image showing {land_use}",
+        "find the satellite image with {feature} near {feature}",
+        "find the remote sensing scene dominated by {terrain_type}"
+      ],
+      "tags": ["domain_shift", "aerial", "small_objects"]
+    }
+  ]
+}

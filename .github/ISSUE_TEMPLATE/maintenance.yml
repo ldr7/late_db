@@ -1,0 +1,32 @@
+name: Maintenance
+description: Improve builds, dependencies, packaging, CI, or repository workflows.
+title: "[Maintenance] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Maintenance problem
+      description: Describe the operational problem and its observable effect on contributors or releases.
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed change
+      description: Identify affected tooling or configuration, resulting workflow, and compatibility constraints.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Define the expected build, install, or automation result and checks for supported workflows.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation and limitations
+      description: Identify command, CI, or package evidence, untested platforms, and required services. Never include credentials or environment-variable values.
+    validations:
+      required: false

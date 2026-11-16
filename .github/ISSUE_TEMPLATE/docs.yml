@@ -1,0 +1,32 @@
+name: Documentation
+description: Correct or improve reader guidance, commands, and examples.
+title: "[Docs] "
+body:
+  - type: textarea
+    id: gap
+    attributes:
+      label: Documentation gap
+      description: Identify the reader, their task, and what is missing or unclear.
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: Proposed content
+      description: Identify pages and the explanations, commands, examples, or diagrams to change.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Define reader outcomes and how relevant commands, links, examples, and claims will be checked.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence, scope, and limitations
+      description: Reference supporting implementation or results, platform assumptions, and unverified examples.
+    validations:
+      required: false

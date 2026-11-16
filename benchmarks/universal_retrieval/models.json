@@ -1,0 +1,50 @@
+{
+  "local_first": [
+    {
+      "model_id": "vidore/colSmol-500M",
+      "family": "ColVision",
+      "mode": "late_interaction",
+      "expected_device": "mps_or_cpu",
+      "notes": "Primary M1 Air smoke-test model. If this is too slow, try the 256M variant."
+    },
+    {
+      "model_id": "vidore/colSmol-256M",
+      "family": "ColVision",
+      "mode": "late_interaction",
+      "expected_device": "mps_or_cpu",
+      "notes": "Fallback for local feasibility and quick iteration."
+    }
+  ],
+  "local_stretch": [
+    {
+      "model_id": "vidore/colpali-v1.3",
+      "family": "ColPali",
+      "mode": "late_interaction",
+      "expected_device": "mps_or_colab_t4",
+      "notes": "Useful reference point if local memory allows."
+    }
+  ],
+  "colab_main": [
+    {
+      "model_id": "vidore/colqwen2-v1.0",
+      "family": "ColQwen",
+      "mode": "late_interaction",
+      "expected_device": "colab_t4_or_l4",
+      "notes": "Quality-oriented open visual retriever."
+    },
+    {
+      "model_id": "vidore/colqwen2.5-v0.2",
+      "family": "ColQwen",
+      "mode": "late_interaction",
+      "expected_device": "colab_l4",
+      "notes": "Stronger visual retriever; use Colab if local MPS is memory-bound."
+    },
+    {
+      "model_id": "jinaai/jina-embeddings-v4",
+      "family": "Jina",
+      "mode": "single_vector_and_late_interaction",
+      "expected_device": "colab_l4_or_api",
+      "notes": "Universal multimodal comparison with dense and multivector modes."
+    }
+  ]
+}

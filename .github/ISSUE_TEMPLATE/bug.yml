@@ -1,0 +1,39 @@
+name: Bug report
+description: Report incorrect engine, package, or demo behavior.
+title: "[Bug] "
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Problem and expected behavior
+      description: What happened, what should happen, and who is affected?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction
+      description: Provide a minimal command or example using repository data, plus sanitized output.
+    validations:
+      required: true
+  - type: textarea
+    id: runtime
+    attributes:
+      label: Runtime context
+      description: Include OS, Rust/Python versions, installation method, and device where relevant. Never include environment-variable values or credentials.
+    validations:
+      required: false
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What observable behavior or regression check demonstrates the fix?
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: Evidence and limitations
+      description: Note frequency, affected inputs, comparisons, and anything not yet reproduced.
+    validations:
+      required: false

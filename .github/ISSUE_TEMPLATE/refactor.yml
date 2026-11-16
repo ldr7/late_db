@@ -1,0 +1,39 @@
+name: Refactor
+description: Improve code structure while preserving observable behavior.
+title: "[Refactor] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Structural problem
+      description: What coupling, duplication, or unclear boundary makes development harder?
+    validations:
+      required: true
+  - type: textarea
+    id: structure
+    attributes:
+      label: Proposed structure
+      description: Describe responsibility changes, interfaces, and affected repository paths.
+    validations:
+      required: true
+  - type: textarea
+    id: contracts
+    attributes:
+      label: Behavior to preserve
+      description: Identify caller behavior, ranking, errors, or storage invariants that must remain consistent.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Define the structural outcome and checks that demonstrate preserved behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence, scope, and limitations
+      description: Reference current code or checks, dependencies, migration needs, and performance effects to measure.
+    validations:
+      required: false

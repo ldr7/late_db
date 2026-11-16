@@ -1,0 +1,32 @@
+name: Feature or demo enhancement
+description: Propose a concrete improvement to retrieval or the working demo.
+title: "[Feature] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe the caller or demo workflow that needs to improve.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Proposed behavior
+      description: Describe the resulting behavior, with a small before/after example if useful.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List observable outcomes and how each can be demonstrated or checked.
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: Evidence, scope, and limitations
+      description: Include relevant repository evidence, dependencies, and known constraints. Keep credentials and environment-variable values out of examples.
+    validations:
+      required: false
